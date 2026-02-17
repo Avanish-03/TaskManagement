@@ -39,7 +39,7 @@ const TaskSchema: Schema = new Schema(
     description: { type: String, required: true },
     type: {
       type: String,
-      enum: ["Work", "Holiday", "Weekend"],
+      enum: ["Work", "Holiday", "Weekend" , "Leave"],
       required: true,
     },
     duration: { type: String, required: true },

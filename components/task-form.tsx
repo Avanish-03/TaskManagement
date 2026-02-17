@@ -79,10 +79,10 @@ export function TaskForm({
     { startTime: "", endTime: "" },
   ])
   const [description, setDescription] = useState("")
-  const [taskType, setTaskType] = useState<"Work" | "Holiday" | "Weekend">("Work")
+  const [taskType, setTaskType] = useState<"Work" | "Holiday" | "Weekend" | "Leave">("Work")
   const [saving, setSaving] = useState(false)
 
-  const isNonWorkType = taskType === "Holiday" || taskType === "Weekend"
+  const isNonWorkType = taskType === "Holiday" || taskType === "Weekend" || taskType === "Leave"
 
   useEffect(() => {
     if (editingTask) {
@@ -256,7 +256,7 @@ export function TaskForm({
               <Select
                 value={taskType}
                 onValueChange={(val) =>
-                  setTaskType(val as "Work" | "Holiday" | "Weekend")
+                  setTaskType(val as "Work" | "Holiday" | "Weekend" | "Leave")
                 }
               >
                 <SelectTrigger>
@@ -266,6 +266,7 @@ export function TaskForm({
                   <SelectItem value="Work">Work</SelectItem>
                   <SelectItem value="Holiday">Holiday</SelectItem>
                   <SelectItem value="Weekend">Weekend</SelectItem>
+                  <SelectItem value="Leave">Leave</SelectItem>
                 </SelectContent>
               </Select>
             </div>
